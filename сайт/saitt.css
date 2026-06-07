@@ -1,0 +1,339 @@
+    
+* { /*начальные значения*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; 
+}
+
+body {                                                                              
+    line-height: 1.5; /*расстояние между картинкой и шапкой*/
+}
+
+
+                                                   /*меню */
+
+/*шапка*/
+header {
+    background: linear-gradient(135deg, #272727, #b95c54);
+    position: fixed; /* Фиксированное позиционирование (не скроллируется) */
+    top: 0; /* Прикрепление к верху */
+    width: 100%; /* Ширина во весь экран */
+    z-index: 1; /* Высокий приоритет отображения (поверх других элементов) */
+}
+
+.container {
+    width: 100%; /*ширина элемента равна 100% от ширины родительского элемента.*/
+    max-width: 1200px;
+    margin: auto; /*отступы между элементами*/
+}
+
+.header-content {
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    font-size: 28px;
+    font-weight: 700; /* Жирность шрифта */
+    color: #b95c54;
+}
+
+.container nav ul { /*отступ между лого и ссылками*/
+    padding: 0 0 0 300px; /*левый*/
+}
+
+nav ul {
+    display: flex; /* Горизонтальное меню */
+    list-style: none; /* Убирает маркеры списка */
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    text-decoration: none; /* Убирает подчеркивание ссылок */
+    color: #272727;
+    font-weight: 600; /*жирность*/
+    padding: 10px 0; /*вверх-низ лево-право*/
+    transition: color 0.3s; /* Плавное изменение цвета за 0.3 секунды */
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color:#b95c54;
+}
+
+
+/* шапка */
+.hat {
+    background-image: url(back.jpg);   
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 180px 0 150px; /*вверх, лева-право, низ*/
+    margin-top: 70px; /* внешний отступ сверху элемента*/
+}
+
+.hat h1 {
+    color: rgb(187, 210, 207);
+    font-size: 48px;
+    margin-bottom: 20px; /*снизу*/
+}
+
+.hat p {
+    color: rgb(187, 210, 207);
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 1000px; /*верхний предел ширины элемента.*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*кнопка*/
+.btn {
+    display: inline-block; /* Блочно-строчный элемент */
+    background: #b95c54;
+    color: white;
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none; /* Убирает подчеркивание */
+    font-weight: bold;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.btn:hover {
+    transform: translateY(-3px); 
+    color: #272727; /*upp btn*/
+}
+
+/* категории, сотрудники */
+.category-title {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 36px;
+    color: #272727;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Автоматическое создание колонок минимальной шириной 250px */
+    gap: 25px; 
+    margin-bottom: 80px;
+}
+
+.category-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden; /*обрезает содержимое, выходящее за границы блока элемента*/
+    box-shadow: 0 4px 20px black;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover { /*при наведении*/
+    box-shadow: #b95c54 0 15px 30px;
+}
+
+.category-img {
+    height: 180px;
+    background-size: cover; /* Масштабирование изображения чтобы покрыть всю область */
+    background-position: center;
+    transition: 0.5s; /*плавность*/
+}
+
+.category-card:hover .category-img { /*анимация*/
+    transform: scale(1.05);
+}
+
+.category-content { /*название*/
+    padding: 20px;
+    text-align: center;
+}
+
+.category-content h3 { /*заголовок*/
+    margin-bottom: 10px;
+    color: #272727;
+}
+
+
+/* Популярные товары, акции и подарки */
+
+.products {
+    display: grid; /* Включает grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Автоматическое создание колонок минимальной шириной 280px */
+    gap: 30px; /*отступ между элементами*/
+    margin-bottom: 80px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden; /* Обрезает содержимое, выходящее за границы */
+    box-shadow: 0 4px 20px black;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 25px #b95c54;
+}
+
+.product-upp {
+    position: absolute;
+    top: 15px; /*отступ элемента от верхнего края контейнера.*/
+    right: 15px;
+    background-color:#b95c54;
+    color: white;
+    padding: 5px 10px; 
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1; /* Приоритет отображения (поверх изображения) */
+}
+
+.product-img {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-content {
+    padding: 20px;
+}
+
+.product-content h3 {
+    margin-bottom: 10px;
+    color: #272727;
+}
+
+.product-price {
+    color: #b95c54;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.add-to-cart {
+    background:#5a4242; 
+    color: white;
+    border: none; /* Убирает границу */
+    padding: 12px 20px; /* Внутренние отступы: сверху/снизу 12px, слева/справа 20px */
+    border-radius: 8px;
+    width: 100%; /*ширина элемента равна 100% от ширины родительского элемента.*/
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #b95c54;
+    transform: translateY(-1px);
+
+}
+
+/* подвал */
+footer {
+    background: linear-gradient(135deg, #272727, #b95c54); /* Градиентный фон под углом 135 градусов */
+    color: white;
+    padding: 30px; 
+}
+
+.footer-content {
+    display: grid; /* Включает grid-раскладку */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Автоматическое создание колонок минимальной шириной 200px */
+    gap: 40px; /* Расстояние между элементами grid */
+    margin-bottom: 40px;
+}
+
+.footer h3 {
+    margin-bottom: 12px; /*устанавливает внешний отступ снизу элемента.*/
+    font-size: 20px;
+    position: relative;
+}
+
+.footer ul {
+    list-style: none; /* Убирает маркеры списка */
+}
+
+.footer ul li {
+    margin-bottom: 12px; /* Внешний отступ снизу у каждого элемента списка */
+}
+
+.footer ul li a {
+    color: #ddd;
+    text-decoration: none; /* Убирает подчеркивание */
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color:#b95c54;
+}
+
+.social-links {
+    display: flex; /* в строчку*/
+    gap: 15px; /*расстояние*/
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /*ширина элемента равна 100% от ширины родительского элемента.*/
+    height: 40px;
+}
+
+.instt{
+    background-image: url(inst.png);
+    background-size: cover; /*фоновое изображение должно быть растянуто по всей ширине и высоте элемента*/
+    background-position: center;
+    border-radius: 50%; /*закругление*/
+    transition: all 0.3s ease;
+}
+.instt:hover { /*анимация*/
+    transform: scale(1.15);
+}
+
+.vkk{
+    background-image: url(vk.png);
+    background-size: cover; /*фоновое изображение должно быть растянуто по всей ширине и высоте элемента*/
+    background-position: center;
+    border-radius: 50%; /*закругление*/
+    transition: all 0.3s ease;
+}
+.vkk:hover { /*анимация*/
+    transform: scale(1.15);
+}
+
+.tgg{
+    background-image: url(tg.png);
+    background-size: cover; /*фоновое изображение должно быть растянуто по всей ширине и высоте элемента*/
+    background-position: center;
+    border-radius: 50%; /*закругление*/
+    transition: all 0.3s ease;
+}
+.tgg:hover { /*анимация*/
+    transform: scale(1.15);
+}
+
+
+/*2025*/
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #8b8b8b; /*цвет текста*/
+}
+
+/* анимации */
+@keyframes fadeIn { /*описывает пошаговое поведение анимации, состояния во времени, создавая эффект движения.*/
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
+}
